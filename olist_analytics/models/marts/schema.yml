@@ -1,0 +1,70 @@
+version: 2
+
+models:
+  - name: fct_orders
+    description: "Tabela fato central com métricas de pedido."
+    columns:
+      - name: order_id
+        description: "Identificador único do pedido."
+        tests:
+          - unique
+          - not_null
+      - name: customer_id
+        description: "Identificador do cliente."
+        tests:
+          - not_null
+      - name: order_status
+        description: "Status do pedido."
+        tests:
+          - not_null
+      - name: total_gross_revenue
+        description: "Receita bruta total do pedido. Pode ser nulo para pedidos sem itens registrados."
+
+  - name: dim_customers
+    description: "Dimensão cliente."
+    columns:
+      - name: customer_id
+        description: "Identificador único do cliente no pedido."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_products
+    description: "Dimensão produto com categoria traduzida."
+    columns:
+      - name: product_id
+        description: "Identificador único do produto."
+        tests:
+          - unique
+          - not_null
+
+  - name: dim_sellers
+    description: "Dimensão vendedor."
+    columns:
+      - name: seller_id
+        description: "Identificador único do vendedor."
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_seller_performance
+    description: "Performance agregada por vendedor."
+    columns:
+      - name: seller_id
+        description: "Identificador único do vendedor."
+        tests:
+          - unique
+          - not_null
+
+  - name: mart_monthly_revenue
+    description: "Receita mensal com variação mês a mês."
+    columns:
+      - name: order_month
+        description: "Mês de referência."
+        tests:
+          - unique
+          - not_null
+      - name: total_revenue
+        description: "Receita total do mês."
+        tests:
+          - not_null
