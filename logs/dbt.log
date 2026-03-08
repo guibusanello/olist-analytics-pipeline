@@ -1,0 +1,27 @@
+[0m15:26:01.297565 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f7c470>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f7e870>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f7e5d0>]}
+
+
+============================== 15:26:01.301865 | 1577719c-f4ec-43be-8f87-42bd132fd17d ==============================
+[0m15:26:01.301865 [info ] [MainThread]: Running with dbt=1.7.9
+[0m15:26:01.302319 [debug] [MainThread]: running dbt with arguments {'warn_error': 'None', 'target_path': 'None', 'partial_parse': 'True', 'no_print': 'None', 'debug': 'False', 'printer_width': '80', 'invocation_command': 'dbt init dbt', 'cache_selected_only': 'False', 'log_format': 'default', 'introspect': 'True', 'write_json': 'True', 'log_cache_events': 'False', 'use_experimental_parser': 'False', 'quiet': 'False', 'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'indirect_selection': 'eager', 'version_check': 'True', 'send_anonymous_usage_stats': 'True', 'fail_fast': 'False', 'profiles_dir': '/Users/guilhermealmeidabusanello/.dbt', 'use_colors': 'True', 'static_parser': 'True', 'log_path': 'logs'}
+[0m15:26:26.441764 [debug] [MainThread]: Starter project path: /Users/guilhermealmeidabusanello/Desktop/olist-analytics-pipeline/.venv/lib/python3.12/site-packages/dbt/include/starter_project
+[0m15:26:26.456857 [info ] [MainThread]: 
+Your new dbt project "olist_analytics" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m15:26:26.457545 [info ] [MainThread]: Setting up your profile.
+[0m15:27:00.142403 [info ] [MainThread]: Profile olist_analytics written to /Users/guilhermealmeidabusanello/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
+[0m15:27:00.518178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100cbebd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109c69940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f7e5d0>]}
+[0m15:27:00.519088 [debug] [MainThread]: Flushing usage events
