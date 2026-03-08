@@ -48,6 +48,13 @@ models:
         description: "Identificador do vendedor."
         tests:
           - not_null
+      - name: price
+        description: "Preço do item."
+        tests:
+          - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              strictly: true
 
   - name: stg_order_payments
     description: "Pagamentos por pedido."
@@ -74,6 +81,9 @@ models:
         description: "Nota da avaliação de 1 a 5."
         tests:
           - not_null
+          - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 1
+              max_value: 5
 
   - name: stg_products
     description: "Produtos com colunas padronizadas."
