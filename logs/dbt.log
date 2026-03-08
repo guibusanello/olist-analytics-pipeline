@@ -25,3 +25,16 @@ Happy modeling!
 [0m15:27:00.142403 [info ] [MainThread]: Profile olist_analytics written to /Users/guilhermealmeidabusanello/.dbt/profiles.yml using target's sample configuration. Once updated, you'll be able to start developing with dbt.
 [0m15:27:00.518178 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x100cbebd0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109c69940>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109f7e5d0>]}
 [0m15:27:00.519088 [debug] [MainThread]: Flushing usage events
+[0m18:48:14.521010 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1094887a0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1098284d0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x109828200>]}
+
+
+============================== 18:48:14.524444 | 5fc18ff9-1f4b-4c01-8888-3f82b166733f ==============================
+[0m18:48:14.524444 [info ] [MainThread]: Running with dbt=1.7.9
+[0m18:48:14.524817 [debug] [MainThread]: running dbt with arguments {'warn_error_options': 'WarnErrorOptions(include=[], exclude=[])', 'log_cache_events': 'False', 'indirect_selection': 'eager', 'target_path': 'None', 'quiet': 'False', 'static_parser': 'True', 'invocation_command': 'dbt run --select fct_orders', 'introspect': 'True', 'warn_error': 'None', 'partial_parse': 'True', 'debug': 'False', 'log_format': 'default', 'write_json': 'True', 'version_check': 'True', 'cache_selected_only': 'False', 'use_experimental_parser': 'False', 'profiles_dir': '/Users/guilhermealmeidabusanello/.dbt', 'use_colors': 'True', 'no_print': 'None', 'printer_width': '80', 'fail_fast': 'False', 'send_anonymous_usage_stats': 'True', 'log_path': 'logs'}
+[0m18:48:14.525168 [error] [MainThread]: Encountered an error:
+Runtime Error
+  No dbt_project.yml found at expected path /Users/guilhermealmeidabusanello/Desktop/olist-analytics-pipeline/dbt_project.yml
+  Verify that each entry within packages.yml (and their transitive dependencies) contains a file named dbt_project.yml
+  
+[0m18:48:14.527252 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1097bd820>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x10923e510>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x1097f7d10>]}
+[0m18:48:14.527505 [debug] [MainThread]: Flushing usage events
