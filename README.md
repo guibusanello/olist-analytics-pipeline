@@ -4,9 +4,10 @@ Pipeline de analytics engineering end-to-end construído sobre o dataset públic
 
 ## Arquitetura
 ```
-CSVs (Olist) → Python (ingestão) → DuckDB (raw) → dbt (staging → intermediate → marts) → Airflow (orquestração)
+CSVs (Olist) → Python (ingestão) → DuckDB (raw) → dbt (staging → intermediate → marts) → Airflow (orquestração) → Metabase (visualização)
 ```
 
+![Dashboard](docs/dashboard.png)
 ![Lineage Graph](docs/lineage.png)
 
 ## Stack
@@ -18,6 +19,7 @@ CSVs (Olist) → Python (ingestão) → DuckDB (raw) → dbt (staging → interm
 | Transformação | dbt-core 1.7 |
 | Testes | dbt tests + dbt-expectations |
 | Orquestração | Apache Airflow 2.9 (Docker) |
+| Visualização | Metabase (Docker) |
 
 ## Estrutura do projeto
 ```
@@ -36,6 +38,9 @@ olist-analytics-pipeline/
 │   ├── docker-compose.yml
 │   └── dags/
 │       └── olist_pipeline.py   # DAG principal
+├── docs/
+│   ├── lineage.png             # Lineage graph do dbt
+│   └── dashboard.png           # Dashboard Metabase
 └── data/
     └── raw/                    # CSVs do Olist (não versionados)
 ```
@@ -66,6 +71,15 @@ Limpeza, tipagem e padronização das tabelas raw. Todas as datas convertidas de
 - **Teste customizado** que verifica integridade de datas de entrega
 - **Source freshness** configurado para monitorar atualização dos dados
 
+## Dashboards
+
+Quatro painéis construídos no Metabase conectado diretamente ao DuckDB:
+
+- **Receita Mensal** — evolução de receita de 2016 a 2018 com crescimento consistente e pico na Black Friday de novembro de 2017
+- **Top 10 Vendedores por Receita** — ranking dos maiores vendedores da plataforma
+- **Status de Entregas** — proporção de entregas no prazo vs. atrasadas
+- **Clientes por Estado** — distribuição geográfica com concentração em SP e Sudeste
+
 ## Como rodar
 
 Veja o [CONTRIBUTING.md](CONTRIBUTING.md) para instruções completas de configuração e execução.
@@ -87,6 +101,11 @@ dbt test
 # 4. Orquestração (requer Docker)
 cd ../airflow
 docker compose up -d
+
+# 5. Visualização (requer Docker)
+cd ../olist-metabase
+docker compose up -d
+# Acesse http://localhost:3000
 ```
 
 ## Dataset
