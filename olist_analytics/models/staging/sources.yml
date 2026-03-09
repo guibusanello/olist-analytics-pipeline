@@ -1,0 +1,36 @@
+version: 2
+
+sources:
+  - name: main
+    description: "Tabelas raw ingeridas pelo script Python."
+    tables:
+      - name: raw_orders
+        description: "Pedidos brutos do Olist."
+        loaded_at_field: "cast(order_purchase_timestamp as timestamp)"
+        freshness:
+          warn_after: {count: 7, period: day}
+          error_after: {count: 30, period: day}
+
+      - name: raw_order_items
+        description: "Itens de pedido brutos."
+
+      - name: raw_customers
+        description: "Clientes brutos."
+
+      - name: raw_order_payments
+        description: "Pagamentos brutos."
+
+      - name: raw_order_reviews
+        description: "Avaliações brutas."
+
+      - name: raw_products
+        description: "Produtos brutos."
+
+      - name: raw_sellers
+        description: "Vendedores brutos."
+
+      - name: raw_geolocation
+        description: "Geolocalização bruta."
+
+      - name: raw_product_category_name_translation
+        description: "Tradução de categorias."
