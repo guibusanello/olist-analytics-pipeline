@@ -23,3 +23,6 @@ __pycache__/
 # Sistema
 .DS_Store
 EOF
+
+# Metabase
+metabase/plugins/*.jar
