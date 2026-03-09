@@ -1,0 +1,25 @@
+cat > .gitignore << 'EOF'
+# Ambiente virtual
+.venv/
+
+# Dados
+data/raw/
+data/*.duckdb
+
+# dbt
+olist_analytics/target/
+olist_analytics/dbt_packages/
+olist_analytics/logs/
+olist_analytics/profiles.yml
+
+# Airflow
+airflow/logs/
+
+# Python
+__pycache__/
+*.pyc
+.env
+
+# Sistema
+.DS_Store
+EOF
