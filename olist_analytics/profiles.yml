@@ -1,0 +1,7 @@
+olist_analytics:
+  target: dev
+  outputs:
+    dev:
+      type: duckdb
+      path: /opt/airflow/data/olist.duckdb
+      threads: 4
